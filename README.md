@@ -32,3 +32,13 @@ With a debug point in _org.hibernate.jpamodelgen.xml.JpaDescriptorParser#L153_. 
 Du to the removal of jaxb in Java 11
 
 ## How to fix ?
+
+Trying some solution base on https://mkyong.com/java/jaxbexception-implementation-of-jaxb-api-has-not-been-found-on-module-path-or-classpath/
+
+### 6.1 Java EE and javax.xml.*
+
+New exception message at _org.hibernate.jpamodelgen.xml.JpaDescriptorParser#L153_.
+
+> ClassCastException: attempting to cast 
+> jar:file:/home/sibuv2/.m2/repository/javax/xml/bind/jaxb-api/2.3.1/jaxb-api-2.3.1.jar!/javax/xml/bind/JAXBContext.class to 
+> jar:file:/home/sibuv2/.m2/repository/javax/xml/bind/jaxb-api/2.3.1/jaxb-api-2.3.1.jar!/javax/xml/bind/JAXBContext.class.  Please make sure that you are specifying the proper ClassLoader.    
